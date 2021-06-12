@@ -1,10 +1,10 @@
 import './App.css';
-import Home from "./components/home/Home";
+import QuizPortal from "./components/portal/QuizPortal";
 
 const App = () => {
   return (
     <div className="App">
-      <Home/>
+        <QuizPortal/>
     </div>
   );
 }

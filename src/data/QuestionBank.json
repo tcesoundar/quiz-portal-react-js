@@ -2,7 +2,7 @@
   "data": [
     {
       "question": "What is capital of Bosnia and Herzegovina ?",
-      "options": ["Mostar", "Sarajevo", "Banja Luka", "Tuzla"],
+      "choices": ["Mostar", "Sarajevo", "Banja Luka", "Tuzla"],
       "answer": "Sarajevo"
     },
     {
