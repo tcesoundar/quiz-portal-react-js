@@ -1,49 +1,54 @@
 {
   "data": [
     {
-      "question": "What is capital of Bosnia and Herzegovina ?",
-      "choices": ["Mostar", "Sarajevo", "Banja Luka", "Tuzla"],
-      "answer": "Sarajevo"
+      "question": "Java object oriented programming concepts is/are",
+      "choices": ["Encapsulation", "Inheritance", "polymorphism", "All of the above"],
+      "answer": "All of the above"
     },
     {
-      "question": "What is the capital of Slovenia ?",
-      "choices": ["Celje", "Ljubljana", "Maribor", "Koper"],
-      "answer": "Ljubljana"
+      "question": "Java does not support _______________?",
+      "choices": ["Inheritance", "Multiple inheritance for classes", "multiple inheritance of interfaces", "compile time polymorphism"],
+      "answer": "Multiple inheritance for classes"
     },
     {
-      "question": "What is the capital of Austria ?",
-      "choices": ["Graz", "Salzburg", "Innsbruck", "Vienna"],
-      "answer": "Vienna"
+      "question": "Runtime polymorphism feature in java is",
+      "choices": ["method overriding", "method overloading", "constructor overloading", "operator overloading"],
+      "answer": "method overriding"
     },
     {
-      "question": "What is the capital of Serbia ?",
-      "choices": ["Belgrade", "Novi Sad", "Niš", "Subotica"],
-      "answer": "Belgrade"
+      "question": "Encapsulation concept in java is",
+      "choices": ["Hiding complexity", "method hiding", "Hiding constructor", "None"],
+      "answer": "Hiding complexity"
     },
     {
-      "question": "What is the capital of Bosnia and Herzegovina ?",
-      "choices": ["Mostar", "Sarajevo", "Banja Luka", "Tuzla"],
-      "answer": "Sarajevo"
+      "question": "Following concept can be used for encapsulation in java programs",
+      "choices": ["Wrapping data fields with methods", "Hiding data and internal methods using access modifiers in a class", "Using Interfaces", "All of the above"],
+      "answer": "All of the above"
     },
     {
-      "question": "What is the capital of Hungary ?",
-      "choices": ["Zalaegerszeg", "Eger", "Szeged", "Budapest"],
-      "answer": "Budapest"
+      "question": "Exposing only necessary information to clients ( main programs, classes) is known as",
+      "choices": ["Abstraction", "Encapsulation", "Data hiding", "Hiding complexity"],
+      "answer": "Abstraction"
     },
     {
-      "question": "What is the capital of Slovakia ?",
-      "choices": ["Košice", "Nitra", "Bratislava", "Poprad"],
-      "answer": "Bratislava"
+      "question": "Hiding the complexity in program is known as",
+      "choices": ["Abstraction", "Encapsulation", "Data hiding", "Composition"],
+      "answer": "Encapsulation"
     },
     {
-      "question": "What is the capital of Romania ?",
-      "choices": ["Bucharest", "Craiova", "Constanta", "Braila"],
-      "answer": "Bucharest"
+      "question": "For Cat and Animal class, correct way of inheritance in java is",
+      "choices": ["class Cat extends Animal", "class Animal extends Cat", "Both are correct way", "None is correct way"],
+      "answer": "class Cat extends Animal"
     },
     {
-      "question": "What is the capital of Germany ?",
-      "choices": ["Wolfsburg", "Munich", "Berlin", "Frankfurt"],
-      "answer": "Berlin"
+      "question": "In a class, encapsulating an object of another class is called",
+      "choices": ["Composition", "Inheritance", "Encapsulation", "None"],
+      "answer": "Composition"
+    },
+    {
+      "question": "Polymorphism types in Java is/are",
+      "choices": ["Compile time", "Run time", "Both", "None"],
+      "answer": "Both"
     }
   ]
 }
