@@ -1,6 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
 
-const Question = ({data, activeQuestion, noOfQuestion, setActiveQuestion, setStep, setAnswers}) => {
+const Question = ({data, setResults, noOfQuestion, activeQuestionNo, setActiveQuestionNo, setStep}) => {
     const [selectedAnswer, setSelectedAnswer] = useState('');
     const [error, setError] = useState('')
     const radioRef = useRef()
@@ -23,33 +23,36 @@ const Question = ({data, activeQuestion, noOfQuestion, setActiveQuestion, setSte
         if(selectedAnswer === '')
             return setError('Please select one answer!')
 
-        setAnswers(prevState => [...prevState, {question: data.question, answer: selectedAnswer}])
+        setResults(prevState => [...prevState, {questionNo: data.questionNo, question: data.question, answer: selectedAnswer}])
         setSelectedAnswer('')
 
-        if(activeQuestion < noOfQuestion-1)
-            setActiveQuestion(activeQuestion+1)
+        if(activeQuestionNo < noOfQuestion)
+            setActiveQuestionNo(activeQuestionNo+1)
     }
 
     const onPreviousHandler = () => {
         setSelectedAnswer('')
 
-        if(activeQuestion < noOfQuestion)
-            setActiveQuestion(activeQuestion-1)
+        if(activeQuestionNo <= noOfQuestion)
+            setActiveQuestionNo(activeQuestionNo-1)
     }
 
     const onSubmitHandler = () => {
         if(selectedAnswer === '')
             return setError('Please select one answer!')
 
+        setResults(prevState => [...prevState, {questionNo: data.questionNo, question: data.question, answer: selectedAnswer}])
+        setSelectedAnswer('')
+
         setStep(3)
     }
 
-    const isLastQuestion = activeQuestion === noOfQuestion- 1
-    const isFirstQuestion = activeQuestion === 0
+    const isLastQuestion = activeQuestionNo === noOfQuestion
+    const isFirstQuestion = activeQuestionNo === 1
 
     return (
         <div className="card card-content content">
-            <h2 className="mb-5">{data.question}</h2>
+            <h2 className="mb-5">{data.questionNo + ". " + data.question}</h2>
             <div className="control" ref={radioRef}>
                 {data.choices.map((choice, index) => (
                     <label className="radio has-background-light" key={index}>

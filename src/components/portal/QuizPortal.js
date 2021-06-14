@@ -3,20 +3,18 @@ import Home from "../home/Home";
 import Question from "../quiz/Question";
 import QuestionBank from "../../data/QuestionBank.json";
 import ScoreBoard from "../score/ScoreBoard";
+import ResultModal from "../modal/ResultModal";
 
 const QuizPortal = () => {
     const [step, setStep] = useState(1);
-    const [activeQuestion, setActiveQuestion] = useState(0);
-    const [answers, setAnswers] = useState([]);
-
-    const startQuizHandler = () => {
-        setStep(2);
-    }
+    const [activeQuestionNo, setActiveQuestionNo] = useState(1);
+    const [results, setResults] = useState([]);
+    const [showResultsModal, setShowResultsModal] = useState(false);
 
     const resetQuizHandler = () => {
-        setActiveQuestion(0)
-        setAnswers([])
-        setStep(2)
+        setActiveQuestionNo(1)
+        setResults([])
+        setStep(1)
     }
 
     return (
@@ -24,26 +22,35 @@ const QuizPortal = () => {
             {
                 step === 1 &&
                 <Home
-                    onQuizStart={startQuizHandler}
+                    startQuiz={() => setStep(2)}
                 />
             }
             {
                 step === 2 &&
                 <Question
-                    data={QuestionBank.data[activeQuestion]}
-                    setAnswers={setAnswers}
+                    data={QuestionBank.data[activeQuestionNo-1]}
+                    setResults={setResults}
                     noOfQuestion={QuestionBank.data.length}
-                    activeQuestion={activeQuestion}
-                    setActiveQuestion={setActiveQuestion}
+                    activeQuestionNo={activeQuestionNo}
+                    setActiveQuestionNo={setActiveQuestionNo}
                     setStep={setStep}
                 />
             }
             {
                 step === 3 &&
                 <ScoreBoard
-                    results={answers}
+                    results={results}
                     data={QuestionBank.data}
-                    onResetQuiz={resetQuizHandler}
+                    resetQuiz={resetQuizHandler}
+                    checkResults={() => setShowResultsModal(true)}
+                />
+            }
+            {
+                showResultsModal &&
+                <ResultModal
+                    data={QuestionBank.data}
+                    results={results}
+                    closeResults={() => setShowResultsModal(false)}
                 />
             }
         </div>
